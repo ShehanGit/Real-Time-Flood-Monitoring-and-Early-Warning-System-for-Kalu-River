@@ -1,0 +1,134 @@
+.login-container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) 0;
+}
+
+.login-card {
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+  background-color: #3498db;
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.login-title {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+}
+
+.login-title svg {
+  margin-right: var(--spacing-sm);
+}
+
+.login-body {
+  padding: var(--spacing-lg);
+}
+
+.login-form {
+  margin-top: var(--spacing-md);
+}
+
+.login-form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.login-label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.login-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.login-input-wrapper:focus-within {
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.login-input-icon {
+  background-color: #f5f5f5;
+  padding: var(--spacing-md);
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-input {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-md);
+}
+
+.login-btn {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.login-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.login-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: var(--spacing-sm);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.login-footer {
+  margin-top: var(--spacing-md);
+  text-align: center;
+  color: #7f8c8d;
+  font-size: var(--font-size-sm);
+}
+
+.register-link {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+}

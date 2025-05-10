@@ -27,6 +27,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 5.2 // Default alert level
   },
+  lastNotified: {
+    type: Date,
+    default: null
+  },
   isAdmin: {
     type: Boolean,
     default: false

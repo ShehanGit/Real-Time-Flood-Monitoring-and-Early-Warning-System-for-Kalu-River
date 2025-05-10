@@ -19,6 +19,28 @@ const getWaterLevelStatus = (level) => {
   }
 };
 
+// Check if user should be notified (based on time since last notification)
+const shouldNotifyUser = (user) => {
+  // If user has never been notified, should notify
+  if (!user.lastNotified) {
+    return true;
+  }
+  
+  // Calculate time difference in hours since last notification
+  const now = new Date();
+  const hoursSinceLastNotification = (now - user.lastNotified) / (1000 * 60 * 60);
+  
+  // Only notify if it's been at least 4 hours since last notification
+  return hoursSinceLastNotification >= 4;
+};
+
+// Update user's last notified timestamp
+const updateUserNotificationTime = async (userId) => {
+  await User.findByIdAndUpdate(userId, {
+    lastNotified: new Date()
+  });
+};
+
 // Fetch water level data from external API
 const fetchWaterLevelData = async (locationName, apiUrl) => {
   try {
@@ -42,18 +64,26 @@ const fetchWaterLevelData = async (locationName, apiUrl) => {
         
         await waterLevel.save();
         
-        // If water level exceeds alert threshold, notify users
+        // If water level exceeds alert threshold, notify eligible users
         if (currentLevel >= process.env.ALERT_LEVEL) {
-          // Find users who need to be notified
+          // Find users who need to be notified based on location and threshold
           const users = await User.find({ 
             location: locationName,
             alertThreshold: { $lte: currentLevel }
           });
           
-          // Send notifications
+          // Send notifications to eligible users
+          let notifiedUsers = 0;
           for (const user of users) {
-            await emailService.sendFloodAlert(user, currentLevel, locationName);
+            // Check if this user should be notified based on time restrictions
+            if (shouldNotifyUser(user)) {
+              await emailService.sendFloodAlert(user, currentLevel, locationName);
+              await updateUserNotificationTime(user._id);
+              notifiedUsers++;
+            }
           }
+          
+          console.log(`${notifiedUsers} users notified about high water levels at ${locationName}`);
         }
         
         return {

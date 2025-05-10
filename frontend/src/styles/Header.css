@@ -1,0 +1,141 @@
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: var(--spacing-md) 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo h1 {
+  font-size: var(--font-size-xl);
+  margin-left: var(--spacing-sm);
+  font-weight: 700;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.header-nav-item {
+  margin-left: var(--spacing-lg);
+}
+
+.header-nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-link:hover {
+  color: #3498db;
+}
+
+.header-nav-link svg {
+  margin-right: var(--spacing-xs);
+}
+
+.header-auth {
+  display: flex;
+  align-items: center;
+}
+
+.header-auth-btn {
+  margin-left: var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.register-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #27ae60;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-md);
+}
+
+.user-info svg {
+  margin-right: var(--spacing-xs);
+}
+
+/* Mobile menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header-nav-list {
+    display: none;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .header-nav-list.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #2c3e50;
+    padding: var(--spacing-md);
+    z-index: 100;
+  }
+  
+  .header-nav-list.open .header-nav-item {
+    margin: var(--spacing-sm) 0;
+  }
+}

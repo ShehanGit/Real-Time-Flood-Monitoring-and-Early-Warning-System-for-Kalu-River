@@ -1,0 +1,181 @@
+.alert-indicator {
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.alert-normal {
+  border-left: 4px solid #2ecc71;
+}
+
+.alert-alert {
+  border-left: 4px solid var(--alert-level-color);
+}
+
+.alert-minor {
+  border-left: 4px solid var(--minor-flood-color);
+}
+
+.alert-major {
+  border-left: 4px solid var(--major-flood-color);
+}
+
+.alert-critical {
+  border-left: 4px solid var(--critical-flood-color);
+}
+
+.alert-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-info {
+  display: flex;
+  align-items: center;
+}
+
+.alert-icon {
+  font-size: 1.5rem;
+  margin-right: var(--spacing-sm);
+}
+
+.alert-icon-normal {
+  color: #2ecc71;
+}
+
+.alert-icon-alert {
+  color: var(--alert-level-color);
+}
+
+.alert-icon-minor {
+  color: var(--minor-flood-color);
+}
+
+.alert-icon-major {
+  color: var(--major-flood-color);
+}
+
+.alert-icon-critical {
+  color: var(--critical-flood-color);
+}
+
+.alert-text h3 {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-xs);
+}
+
+.alert-text p {
+  color: #7f8c8d;
+}
+
+.alert-level {
+  font-weight: 700;
+}
+
+.alert-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gauge-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.gauge-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.gauge-fill-normal {
+  background: conic-gradient(#2ecc71 var(--fill-percent), transparent 0);
+}
+
+.gauge-fill-alert {
+  background: conic-gradient(var(--alert-level-color) var(--fill-percent), transparent 0);
+}
+
+.gauge-fill-minor {
+  background: conic-gradient(var(--minor-flood-color) var(--fill-percent), transparent 0);
+}
+
+.gauge-fill-major {
+  background: conic-gradient(var(--major-flood-color) var(--fill-percent), transparent 0);
+}
+
+.gauge-fill-critical {
+  background: conic-gradient(var(--critical-flood-color) var(--fill-percent), transparent 0);
+}
+
+.gauge-value {
+  position: relative;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.gauge-label {
+  font-size: var(--font-size-xs);
+  color: #7f8c8d;
+}
+
+.alert-progress {
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.progress-bar {
+  height: 10px;
+  width: 100%;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.progress-fill-normal {
+  background-color: #2ecc71;
+}
+
+.progress-fill-alert {
+  background-color: var(--alert-level-color);
+}
+
+.progress-fill-minor {
+  background-color: var(--minor-flood-color);
+}
+
+.progress-fill-major {
+  background-color: var(--major-flood-color);
+}
+
+.progress-fill-critical {
+  background-color: var(--critical-flood-color);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: #7f8c8d;
+  margin-top: var(--spacing-xs);
+}

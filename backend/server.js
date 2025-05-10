@@ -43,8 +43,19 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 // Initial data fetch on server start
 (async () => {
   try {
-    console.log('Performing initial data fetch...');
-    await fetchDataService.fetchAllLocations();
+    console.log('Performing initial data fetch on server start...');
+    // This will fetch data and send notifications if levels are high
+    const results = await fetchDataService.fetchAllLocations();
+    
+    // Log the current water levels on startup
+    for (const [location, data] of Object.entries(results)) {
+      if (data.success) {
+        console.log(`${location}: ${data.data.level}m (${data.data.status})`);
+      } else {
+        console.error(`Failed to fetch data for ${location}: ${data.error}`);
+      }
+    }
+    
     console.log('Initial data fetch completed');
   } catch (error) {
     console.error('Initial data fetch failed:', error);
