@@ -1,6 +1,5 @@
 # Real-Time Flood Monitoring and Early Warning System for Kalu River
 
-![Flood Monitoring System Banner](https://via.placeholder.com/1200x300/3498db/ffffff?text=Kalu+River+Flood+Monitoring+System)
 
 A comprehensive web-based system for monitoring water levels in the Kalu River, Sri Lanka, and sending automated alerts to registered users when flood conditions are detected. This system provides real-time data visualization and early warnings to help protect lives and property.
 
